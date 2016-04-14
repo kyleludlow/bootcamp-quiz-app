@@ -1,0 +1,11 @@
+body {
+    background-image: url('https://images.unsplash.com/photo-1457725428622-efbbd8b7b224?crop=entropy&fit=crop&fm=jpg&h=1300&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1175');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.content {
+    margin: 0 auto;
+}
+.question-list-item {
+    padding: 5px 0;
+}
