@@ -9,7 +9,7 @@ var question1 = {
 
 var question2 = {
 	question: 'question2',
-	options: ['option1', 'option2', 'option3', 'option4'], 
+	options: ['question 2 option1', 'option2', 'option3', 'option4'],
 	correctAnswer: 0
 }
 
@@ -18,7 +18,7 @@ var question2 = {
 
 var question3 = {
 	question: 'question3',
-	options: ['option1', 'option2', 'option3', 'option4'], 
+	options: ['question 3 option1', 'option2', 'option3', 'option4'],
 	correctAnswer: 0
 }
 
@@ -40,10 +40,43 @@ var question5 = {
 	correctAnswer: 0
 }
 
-var listOfQuestions = [question1, question2, question3, question4, question5]
+var listOfQuestions = [question1, question2, question3, question4, question5];
+
+var currentQuestion = 0;
+
+$('p > input').change(function() {
+
+	$('#submitButton').prop('disabled', false).removeClass('disabled');
+});
 
 // Submit Button //
 
 $('#submitButton').click(function() {
-	
-})
+
+	//remove old question and answers
+
+
+	//go to next question
+
+
+	//replace question
+
+	$('#question').text(listOfQuestions[currentQuestion].question);
+
+
+	//replace list of answers
+
+	for(var i = 0; i < 4; i++ ) {
+
+		$('#choice' + (i + 1) ).text(listOfQuestions[currentQuestion].options[i]);
+
+	}
+
+
+	//increment currentQuestion
+
+	currentQuestion++;
+
+
+
+});
