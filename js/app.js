@@ -44,6 +44,8 @@ var listOfQuestions = [question1, question2, question3, question4, question5];
 
 var currentQuestion = 0;
 
+var userScore = 0;
+
 $('p > input').change(function() {
 
 	$('#submitButton').prop('disabled', false).removeClass('disabled');
@@ -51,7 +53,8 @@ $('p > input').change(function() {
 
 // Submit Button //
 
-$('#submitButton').click(function() {
+$('#submitButton').click(function(event) {
+	event.preventDefault();
 
 	//remove old question and answers
 
@@ -64,6 +67,10 @@ $('#submitButton').click(function() {
 	$('#question').text(listOfQuestions[currentQuestion].question);
 
 
+	
+	//captures user selection
+	var currentUserAnswer = $("input[name=userGuess]:checked").val();
+
 	//replace list of answers
 
 	for(var i = 0; i < 4; i++ ) {
@@ -72,10 +79,31 @@ $('#submitButton').click(function() {
 
 	}
 
+	//resets radio button
+
+	$('input[name="userGuess"]').prop('checked', false);
+
+
+	// gets correct answers
+
+	var currentCorrectAnswer = listOfQuestions[currentQuestion].correctAnswer;
+
+	if (currentUserAnswer === currentCorrectAnswer) {
+		userScore++
+		console.log(userScore++);
+	}
+
+	$('.userScoreTally').text(userScore);
+
 
 	//increment currentQuestion
 
 	currentQuestion++;
+
+
+
+
+
 
 
 
